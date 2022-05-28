@@ -44,16 +44,12 @@
             console.log(url)
             let params = url.searchParams;
             let shared_url = params.get("url");
-            console.log("🚀 ~ file: Untitled-1 ~ line 47 ~ liff.ready.then ~ shared_url", shared_url)
             let msg = params.get("msg");
-            console.log("🚀 ~ file: Untitled-1 ~ line 49 ~ liff.ready.then ~ msg", msg)
             let img = params.get("img").replace('http://', 'https://')
-            console.log("🚀 ~ file: Untitled-1 ~ line 51 ~ liff.ready.then ~ img", img)
             let header = params.get("header");
-            console.log("🚀 ~ file: Untitled-1 ~ line 53 ~ liff.ready.then ~ header", header)
             let token
             let filename
-            if (shared_url || msg || filename.length > 0) {
+            if ( msg) {
                 /* liff.getProfile().then(profile => {
                     let userid = profile.userId
                     let email = liff.getDecodedIDToken().email
@@ -141,7 +137,6 @@
                         aspectMode: "cover"
                     };
                 }
-                console.log(JSON.stringify(flex))
                 liff
                     .shareTargetPicker([flex])
                     .then(res => {
