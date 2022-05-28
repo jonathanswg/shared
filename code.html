@@ -39,7 +39,9 @@
         liff.init({ liffId: lifffoward_id })
         liff.ready.then(() => {
             if (!liff.isLoggedIn()) return liff.login({ redirectUri: window.location });
+            
             let url = new URL(window.location);
+            console.log(url)
             let params = url.searchParams;
             let shared_url = params.get("url");
             let msg = params.get("msg");
